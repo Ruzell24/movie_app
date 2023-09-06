@@ -22,7 +22,8 @@ Route::post('/sign-up', [UserController::class, 'store']);
 Route::get('/movies', [MovieController::class, 'getMovies']);
 
 
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => ['auth:sanctum']] , function () {
+    Route::post('/add-favorite-movie' , [MovieController::class , 'addToFavoriteMovie']);
+    Route::get('/get-favorite-movie-list' , [MovieController::class, 'getMovieBookmark']);
 });
+   
