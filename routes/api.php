@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MovieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,8 @@ use App\Http\Controllers\UserController;
 
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/sign-up', [UserController::class, 'store']);
+
+Route::get('/movies', [MovieController::class, 'getMovies']);
 
 
 
