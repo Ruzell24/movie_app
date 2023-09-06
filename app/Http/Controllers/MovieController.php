@@ -34,7 +34,7 @@ class MovieController extends Controller
         ], 200);
     }
 
-    public function bookmarkMovie(Request $request){
+    public function addToFavoriteMovie(Request $request){
         $request->validate([
             'movie_name' => 'string|required',
             'movie_id' => 'int|required' ,

@@ -23,7 +23,7 @@ Route::get('/movies', [MovieController::class, 'getMovies']);
 
 
 Route::group(['middleware' => ['auth:sanctum']] , function () {
-    Route::post('/bookmark-movie' , [MovieController::class , 'bookmarkMovie']);
-    Route::get('/get-bookmark-movie-list' , [MovieController::class, 'getMovieBookmark']);
+    Route::post('/add-favorite-movie' , [MovieController::class , 'addToFavoriteMovie']);
+    Route::get('/get-favorite-movie-list' , [MovieController::class, 'getMovieBookmark']);
 });
    
